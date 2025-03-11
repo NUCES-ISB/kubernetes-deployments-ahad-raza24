@@ -1,5 +1,5 @@
-from flask import Flask, jsonify
-import psycopg2
+from flask import Flask, jsonify # type: ignore
+import psycopg2 # type: ignore
 import os
 
 app = Flask(__name__)
@@ -36,4 +36,4 @@ def test_db():
         return jsonify({"error": "Database connection failed"}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5002)
