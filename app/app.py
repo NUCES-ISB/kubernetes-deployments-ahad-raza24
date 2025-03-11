@@ -18,10 +18,11 @@ def connect_db():
             user=DB_USER,
             password=DB_PASSWORD
         )
-        return conn
+        conn.close()  # Close connection after checking
+        return True
     except Exception as e:
         print(f"Database connection failed: {e}")
-        return None
+        return False
 
 @app.route("/")
 def home():

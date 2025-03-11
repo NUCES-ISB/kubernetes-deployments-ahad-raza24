@@ -5,8 +5,9 @@ metadata:
 spec:
   selector:
     app: flask-app
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-  type: NodePort  # Change to LoadBalancer if using cloud Kubernetes
+      nodePort: 30447   # Optional: Ensure it's in range 30000-32767
